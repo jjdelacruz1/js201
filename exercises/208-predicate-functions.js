@@ -21,8 +21,21 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+function isVowel(x) {
+  var result;
+//put this in an array
+  if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U'  || x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
+    return result = true;
+  } else {
+    return result = false;
+  }
+}
 
-
+isVowel('C');
+isVowel('e');
+isVowel('A');
+isVowel(99);
+isVowel({e: 'Elephant'});
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
 // return true or false if the number is even or odd, respectively.
@@ -37,6 +50,29 @@
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+function isEven(x) {
+  if(x % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isOdd(x) {
+  if(x % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  } 
+}
+
+isEven(100);
+isEven(1);
+isEven(-2);
+isEven('banana');
+isOdd(5);
+isOdd('7');
+isOdd(3.14);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,3 +88,20 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+function isCapitalCity(state, city){
+  var capital = {
+    state: 'Texas', capital: 'Austin',
+    state: 'Alaska', capital: 'Juneau'
+  }
+  if (state && city === capital) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+isCapitalCity('Texas', 'Austin');
+isCapitalCity('Texas', 'Houston');
+isCapitalCity('Alaska', 'Juneau');
+isCapitalCity('Strawberry', 'Mango');
