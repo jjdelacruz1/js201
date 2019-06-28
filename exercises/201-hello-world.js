@@ -6,6 +6,7 @@ function hello(name){
   return "Hello, " + name + "!"
 }
 hello('Mustache');
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "helloDefault" such that if no name is given it will return
 // 'Hello, world!'
