@@ -23,6 +23,7 @@
 
 function isVowel(x) {
   var result;
+  // var letters = ['A', 'E', 'I', 'O', 'U']
 //put this in an array
   if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U'  || x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
     return result = true;
@@ -31,11 +32,6 @@ function isVowel(x) {
   }
 }
 
-isVowel('C');
-isVowel('e');
-isVowel('A');
-isVowel(99);
-isVowel({e: 'Elephant'});
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
 // return true or false if the number is even or odd, respectively.
@@ -51,28 +47,19 @@ isVowel({e: 'Elephant'});
 // isOdd(3.14) --> false
 
 function isEven(x) {
-  if(x % 2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  if(x % 2 == 0 && typeof(x) == 'number') {
+    return true
+  } else return false
 }
 
 function isOdd(x) {
-  if(x % 2 !== 0) {
-    return true;
-  } else {
-    return false;
-  } 
-}
 
-isEven(100);
-isEven(1);
-isEven(-2);
-isEven('banana');
-isOdd(5);
-isOdd('7');
-isOdd(3.14);
+  if(x % 2 !== 0 && typeof(x) === 'number' && x % 2 == 1) {
+    return true;
+  } else if (x % 2 == -1) {
+    return true
+  } else return false
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,18 +78,57 @@ isOdd(3.14);
 // isCapitalCity('Strawberry', 'Mango') --> false
 
 function isCapitalCity(state, city){
-  var capital = {
-    state: 'Texas', capital: 'Austin',
-    state: 'Alaska', capital: 'Juneau'
-  }
-  if (state && city === capital) {
-    return true;
-  } else {
-    return false;
-  }
+  let capitals = {
+    Alabama: 'Montgomery',
+    Montana: 'Helena',
+    Alaska:    'Juneau',    
+    Nebraska: 'Lincoln',
+    Arizona: 'Phoenix',    
+    Nevada:    'Carson City',
+    Arkansas: 'Little Rock',    
+    'New Hampshire': 'Concord',
+    California:    'Sacramento',    
+    'New Jersey': 'Trenton',
+    Colorado: 'Denver',    
+    'New Mexico': 'Santa Fe',
+    Connecticut: 'Hartford',    
+    'New York': 'Albany',
+    Delaware: 'Dover',    
+    'North Carolina': 'Raleigh',
+    Florida: 'Tallahassee',    
+    'North Dakota': 'Bismarck',
+    Georgia: 'Atlanta',    
+    Ohio: 'Columbus',
+    Hawaii:    'Honolulu',    
+    Oklahoma: 'Oklahoma City',
+    Idaho: 'Boise',    
+    Oregon:    'Salem',
+    Illinois: 'Springfield',    
+    Pennsylvania: 'Harrisburg',
+    Indiana: 'Indianapolis',    
+    'Rhode Island': 'Providence',
+    Iowa: 'Des Moines',    
+    'South Carolina': 'Columbia',
+    Kansas:    'Topeka',    
+    'South Dakota': 'Pierre',
+    Kentucky: 'Frankfort',    
+    Tennessee: 'Nashville',
+    Louisiana: 'Baton Rouge',
+    Texas: 'Austin',
+    Maine: 'Augusta',
+    Utah: 'Salt Lake City',
+    Maryland: 'Annapolis',    
+    Vermont: 'Montpelier',
+    Massachusetts: 'Boston',    
+    Virginia: 'Richmond',
+    Michigan: 'Lansing',    
+    Washington:    'Olympia',
+    Minnesota:    'St. Paul',    
+    'West Virginia': 'Charleston',
+    Mississippi: 'Jackson',    
+    Wisconsin: 'Madison',
+    Missouri: 'Jefferson City',    
+    Wyoming: 'Cheyenne'
+};
+if (state = )
 }
-
-isCapitalCity('Texas', 'Austin');
-isCapitalCity('Texas', 'Houston');
-isCapitalCity('Alaska', 'Juneau');
-isCapitalCity('Strawberry', 'Mango');

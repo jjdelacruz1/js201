@@ -10,18 +10,37 @@
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
 
+// function tipAmount(amount, service) {
+//   if (service === 'good'){
+//     return amount * 0.2
+//   } else if (service === 'fair') {
+//     return amount * 0.15
+//   } else if (service === 'poor') {
+//     return amount * 0.1
+//   }
+// }
+
+//ideal way with how to solve this because of the data which can be dynamically changed at any time...
 function tipAmount(amount, service) {
-  if (service === 'good'){
-    return amount * 0.2
-  } else if (service === 'fair') {
-    return amount * 0.15
-  } else if (service === 'poor') {
-    return amount * 0.1
+  var levelType = {
+    good: 0.2,
+    fair: 0.15,
+    poor: 0.1
   }
+
+  return amount *(levelType[service])
 }
 
-tipAmount(100, 'good');
-tipAmount(40, 'fair');
+// function tipAmountWithSwitch(amount, service) {
+//   switch (service) {
+//     case 'good':
+//       return amount * .2
+//     case 'fair':
+//       return amount * .15
+//     case 'poor':
+//       return amount * .1
+//   }
+// }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "totalAmount" that takes the same arguments as "tipAmount"
@@ -32,19 +51,29 @@ tipAmount(40, 'fair');
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
 
+// function totalAmount(amount, service) {
+//   if (service === 'good') {
+//     return amount * 1.2
+//   } else if (service === 'fair') {
+//     return amount * 1.15
+//   } else if (service === 'poor') {
+//     return amount * 1.1
+//   }
+// }
+
+//building upon the previous function from the earlier tipAmount
 function totalAmount(amount, service) {
-  if (service === 'good') {
-    return amount * 1.2
-  } else if (service === 'fair') {
-    return amount * 1.15
-  } else if (service === 'poor') {
-    return amount * 1.1
-  }
+  return amount + tipAmount(amount, service)
 }
 
-totalAmount(100, 'good');
-totalAmount(40, 'fair');
-
+// function totalAmount(amount, service) {
+//   var amountToTotal = {
+//     good: 1.2,
+//     fair: 1.15,
+//     poor: 1.1
+//   }
+//   return amount * amountToTotal[level]
+// }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "splitAmount" that takes a bill amount, the level of service,
 // and the number of people to split the bill between. It should return the final
@@ -54,15 +83,18 @@ totalAmount(40, 'fair');
 // splitAmount(100, 'good', 5) --> 24
 // splitAmount(40, 'fair', 2) --> 23
 
+// function splitAmount(amount, service, party) {
+//   if (service === 'good') {
+//     return (amount * 1.2) / party
+//   } else if (service === 'fair') {
+//     return (amount * 1.15) / party
+//   } else if (service === 'poor') {
+//     return (amount * 1.10) / party
+//   }
+// }
+
 function splitAmount(amount, service, party) {
-  if (service === 'good') {
-    return (amount * 1.2) / party
-  } else if (service === 'fair') {
-    return (amount * 1.15) / party
-  } else if (service === 'poor') {
-    return (amount * 1.10) / party
-  }
+  return totalAmount(amount, service) / party
 }
 
-splitAmount(100, 'good', 5);
-splitAmount(40, 'fair', 2);
+//when calling a function you need to reference with the same parameters from the earlier function
