@@ -9,3 +9,18 @@
 // Examples:
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
+function  fizzbuzz(num){
+  let finalString = ""
+  for(i = 0; i <= num; i++){
+    if (i % 3 === 0) {
+      finalString += "fizz"
+    } else if (i % 5 === 0) {
+      finalString += "buzz"
+    } else if (i % 15 === 0) {
+      finalString += "fizzbuzz"
+    } else finalString += "."
+  }
+  return finalString
+  console.log(finalString)
+}
+fizzbuzz(8);

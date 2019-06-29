@@ -20,17 +20,32 @@
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
+// original code begin
+// function isVowel(x) {
+//   var result;
+//   // var letters = ['A', 'E', 'I', 'O', 'U']
+// //put this in an array
+//   if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U'  || x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
+//     return result = true;
+//   } else {
+//     return result = false;
+//   }
+// } end original code
 
-function isVowel(x) {
-  var result;
-  // var letters = ['A', 'E', 'I', 'O', 'U']
-//put this in an array
-  if(x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U'  || x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
-    return result = true;
-  } else {
-    return result = false;
-  }
+function isVowel(char) {
+  if (typeof char !== 'string') return false
+  if (char.length !== 1) return false
+  return 'aeiou'.indexOf(char.toLowerCase()) !== -1
+  const vowels = 'aeiou'.split('')//['a', 'e', 'i', 'o', 'u']
+  // const lowerCaseChar = char.toLowerCase() //doesn't need to necessarily need to be here
+  return vowels.includes(char.toLowerCase())
+
+  // return typeof char !== 'string' &&
+  // char.length !== 1 &&
+  // 'aeiou'.indexOf(char.toLowerCase()) !== -1
 }
+
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -46,6 +61,8 @@ function isVowel(x) {
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+
+// original answer
 function isEven(x) {
   if(x % 2 == 0 && typeof(x) == 'number') {
     return true
@@ -54,11 +71,11 @@ function isEven(x) {
 
 function isOdd(x) {
 
-  if(x % 2 !== 0 && typeof(x) === 'number' && x % 2 == 1) {
-    return true;
-  } else if (x % 2 == -1) {
-    return true
-  } else return false
+  // if (typeof x !== 'number') return false
+  // return x % 2 !== 0
+
+  return typeof x === 'number' &&
+    (x % 2 === 1 || x % 2 === -1)
 }
 
 
@@ -135,5 +152,4 @@ if (capitals[state] == city){
 }else {
   return false;
 }
-
 }
