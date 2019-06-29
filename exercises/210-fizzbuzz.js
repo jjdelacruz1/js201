@@ -11,13 +11,13 @@
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
 function  fizzbuzz(num){
   let finalString = ""
-  for(i = 0; i <= num; i++){
-    if (i % 3 === 0) {
+  for(let i = 1; i <= num ; i++){
+    if (i % 3 === 0 && i % 5 === 0) {
+      finalString += "fizzbuzz"
+    } else if (i % 3 === 0) {
       finalString += "fizz"
     } else if (i % 5 === 0) {
       finalString += "buzz"
-    } else if (i % 15 === 0) {
-      finalString += "fizzbuzz"
     } else finalString += "."
   }
   return finalString
