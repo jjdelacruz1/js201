@@ -130,5 +130,10 @@ function isCapitalCity(state, city){
     Missouri: 'Jefferson City',    
     Wyoming: 'Cheyenne'
 };
-if (state = )
+if (capitals[state] == city){
+  return true;
+}else {
+  return false;
+}
+
 }
