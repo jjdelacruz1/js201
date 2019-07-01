@@ -9,9 +9,11 @@
 function rockPaperScissors(p1, p2) {
   if (p1 === 'rock' && p2 === 'scissors') {
     return 'player 1'
-  } else if (p1 === 'rock' && p2 === 'paper') {
+  } 
+  if (p1 === 'rock' && p2 === 'paper') {
     return 'player 2'
-  } else if (p1 === 'paper' && p2 === 'paper') {
+  }
+  if (p1 === 'paper' && p2 === 'paper') {
     return 'draw'
   }
 }
