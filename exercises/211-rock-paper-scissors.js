@@ -6,3 +6,12 @@
 // rockPaperScissors('rock', 'scissors') --> 'player 1'
 // rockPaperScissors('rock', 'paper') --> 'player 2'
 // rockPaperScissors('paper', 'paper') --> 'draw'
+function rockPaperScissors(p1, p2) {
+  if (p1 === 'rock' && p2 === 'scissors') {
+    return 'player 1'
+  } else if (p1 === 'rock' && p2 === 'paper') {
+    return 'player 2'
+  } else if (p1 === 'paper' && p2 === 'paper') {
+    return 'draw'
+  }
+}
