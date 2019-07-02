@@ -24,14 +24,16 @@ function reverse(str) {
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 function findLongestWord(str) {
-  var strSplit = str.split(' ')
-  var longestWord = 0
-  for (var i = 0; i < strSplit.length; i++){
-    if(strSplit[i].length > longestWord){
-      longestWord = strSplit[i]
-    }
+  var str = str.split(" ");
+  var longest = 0;
+  var word = null;
+  for (var i = 0; i < str.length; i++) {
+      if (longest < str[i].length) {
+          longest = str[i].length;
+          word = str[i];
+      }
   }
-  return longestWord
+  return word;
 }
 
 
@@ -43,7 +45,12 @@ function findLongestWord(str) {
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
+function nicer(str) {
+  
+  var newString = str.replace(/heck|darn|dang|crappy/gi, "")
+  return newString
 
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +61,9 @@ function findLongestWord(str) {
 // Examples:
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
+function capitalizeAll(str){
 
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,3 +76,6 @@ function findLongestWord(str) {
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+function split() {
+  
+}
