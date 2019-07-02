@@ -6,7 +6,7 @@
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
 function numberJoinerWhile(a, b) {
-  let result = " "
+  let result = ""
   while (a <= b) {
     if (a < b){
       result += a + "_"
@@ -23,7 +23,7 @@ function numberJoinerWhile(a, b) {
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
 function numberJoinerFor(a, b) {
-  let result = " "
+  let result = ""
   for (; a <= b; a++) {
     if (a < b){
       result += a + "_"
