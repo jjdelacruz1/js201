@@ -45,14 +45,33 @@ function findLongestWord(str) {
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
-function nicer(str) {
-  
-  var newString = str.replace(/heck|darn|dang|crappy/gi, "")
-  return newString
 
+// Now the string is an Array. Compare each word against the badWords Array. 
+// Remove the bad words. if not a bad word push to a new Array. then array to string
+// then return the new string.
+
+function nicer(sentence) {
+  badWords = ['heck', 'darn', 'dang', 'crappy']
+  words = sentence.split(' ')
+
+  newArr = []
+  for(i = 0; i < words.length; i++){
+    if(badWords.includes(words[i]) != true){
+      newArr.push(words[i])
+    }
+  }
+  let filteredString = newArr.toString()
+  let completeString = filteredString.replace(/,/g,' ')
+  return completeString
 }
 
+// function nicer(str) {
+//   // ANOTHER WAY TO COMPLETE THIS USING REGULAR EXPRESSIONS!!!
+//   var newString = str.replace(/heck|darn|dang|crappy/gi, "")
+//   var newCleanString = newString.replace(/\s\s/g, " ")
+//   return newString
 
+// }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
 // It should take as input a sentence and capitalize the first letter
@@ -62,9 +81,14 @@ function nicer(str) {
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 function capitalizeAll(str){
-
+  str = str.split(" ")
+  for (var i = 0, x = str.length; i < x; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].substr(1)
+  }
+  return str.join(" ")
 }
 
+//look up .map takes an iterator and a function
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -77,5 +101,5 @@ function capitalizeAll(str){
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 function split() {
-  
+
 }
