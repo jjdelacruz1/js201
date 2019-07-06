@@ -109,3 +109,5 @@ function squareDance(arr){
     }
     return newSquares
   }
+
+  //exercises solved!
