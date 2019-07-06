@@ -9,7 +9,7 @@
 // reverse("skoob") --> "books"
 function reverse(str) {
   var splitString = str.split("")
-  var reverseArray = splitString.reverse();
+  var reverseArray = splitString.reverse()
   var joinArray = reverseArray.join("")
   return joinArray
 }
@@ -24,17 +24,15 @@ function reverse(str) {
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 function findLongestWord(str) {
-  var str = str.split(" ");
-  var longest = 0;
-  var word = null;
-  for (var i = 0; i < str.length; i++) {
-      if (longest < str[i].length) {
-          longest = str[i].length;
-          word = str[i];
+  var strSplit = str.split(' ');
+   var longestWord = '';
+   for(var i = 0; i < strSplit.length; i++){
+     if(strSplit[i].length > longestWord.length){
+     longestWord = strSplit[i];
       }
-  }
-  return word;
-}
+   }
+   return longestWord;
+ }
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +51,6 @@ function findLongestWord(str) {
 function nicer(sentence) {
   badWords = ['heck', 'darn', 'dang', 'crappy']
   words = sentence.split(' ')
-
   newArr = []
   for(i = 0; i < words.length; i++){
     if(badWords.includes(words[i]) != true){
@@ -101,13 +98,13 @@ function capitalizeAll(str){
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 function split(string, delimiter) {
-  var splitString = [ ];
+  let splitString = [ ];
 
   for (var i = 0; i < string.length; i++) {
       if (string[i] == delimiter) {
         console.log(string.indexOf(i))
       } else {
-          splitString += string[i]
+          splitString.push(...string[i])
       }
   }
   return splitString
