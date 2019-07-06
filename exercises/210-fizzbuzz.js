@@ -21,6 +21,5 @@ function  fizzbuzz(num){
     } else finalString += "."
   }
   return finalString
-  console.log(finalString)
 }
 fizzbuzz(8);

@@ -82,7 +82,7 @@ function nicer(sentence) {
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 function capitalizeAll(str){
   str = str.split(" ")
-  for (var i = 0, x = str.length; i < x; i++) {
+  for (var i = 0; i < str.length; i++) {
     str[i] = str[i][0].toUpperCase() + str[i].substr(1)
   }
   return str.join(" ")
@@ -100,6 +100,15 @@ function capitalizeAll(str){
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
-function split() {
+function split(string, delimiter) {
+  var splitString = [ ];
 
+  for (var i = 0; i < string.length; i++) {
+      if (string[i] == delimiter) {
+        console.log(string.indexOf(i))
+      } else {
+          splitString += string[i]
+      }
+  }
+  return splitString
 }
