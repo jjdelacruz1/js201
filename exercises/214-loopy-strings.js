@@ -102,9 +102,9 @@ function split(string, delimiter) {
 
   for (var i = 0; i < string.length; i++) {
       if (string[i] == delimiter) {
-        console.log(string.indexOf(i))
+        // console.log(string.indexOf(i))
       } else {
-          splitString.push(...string[i])
+          splitString.push(string[i])
       }
   }
   return splitString
