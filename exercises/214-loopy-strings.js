@@ -109,3 +109,18 @@ function split(string, delimiter) {
   }
   return splitString
 }
+
+function split(string, delimiter) {
+var results = []
+var delimiterLength = delimiter.length
+
+  for(var index = 0; index < string.length; index++) {
+    let characters = string.substr(index, delimiterLength)
+    // let chunkStart = 
+    // let chunkEnd
+    // console.log(characters, index)
+    if (characters === delimiter) {
+      console.log(string.substr(0, index))
+    }
+  }
+}

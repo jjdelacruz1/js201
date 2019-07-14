@@ -30,3 +30,11 @@ function rockPaperScissors(p1, p2) {
   }
 }
 
+// function rockPaperScissors(p1, p2){
+//   let throws = ["rock", "paper", "scissors"]
+//   const results = [
+//     ['draw', 'player 2', 'player 1'],
+//     ['player 1', 'draw', 'player 2'],
+//     ['player 2', 'player 1', 'draw'],
+//   ];
+// }
