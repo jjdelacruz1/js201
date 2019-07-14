@@ -124,3 +124,5 @@ var delimiterLength = delimiter.length
     }
   }
 }
+
+//look at string.indexOf(delimiter) MDN javascript string indexOf to find arguments
