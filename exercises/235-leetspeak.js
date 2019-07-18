@@ -16,7 +16,7 @@
 // leetspeak('ORANGE') --> "0r4n63"
 
 function leetspeak(str) {
-  let newChar = {
+  var newChar = {
     A:4,
     E:3,
     G:6,
@@ -25,5 +25,14 @@ function leetspeak(str) {
     S:5,
     T:7
   }
-  return console.log(newChar)
+  var keys = Object.keys(newChar)
+  var newStr = str.toUpperCase()
+  var final = ''
+  for (var i = 0; i < newStr.length; i++) {
+    let character = newStr.charAt(i)
+    if (keys.includes(character)) {
+      final += newChar[character]
+    } else final += character
+  }
+  return final.toLowerCase()
 }
